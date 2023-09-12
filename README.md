@@ -12,6 +12,14 @@ bash build.sh
 sudo tar -cf yangtze-rootfs.tar -C /yangtze-rootfs .
 ```
 
+方法二：
+
+在新位置导入WSL。
+将openkylin.tar复制到C盘，并在C盘建名为：openkylin的文件夹
+执行：wsl --import openkylin c:\openkylin c:\openkylin.tar --version 2
+默认密码：35785214
+Root密码：35785214
+
 # 声明
 
 参考 deepin-docker 制作
