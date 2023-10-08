@@ -38,7 +38,7 @@ wsl --import openkylin .\ .\openkylin.tar --version 2
 ```
 上面的openkylin是容器名，可以自定义，但是自己改完之后后面修改默认用户会比较麻烦。    
 
-默认密码：35785214  
+默认用户为xxx，密码：35785214  
 Root密码：35785214
 
 ## 新增用户
@@ -56,7 +56,34 @@ Root密码：35785214
 2. 执行`.\openkylin.exe config --default-user xxxx`如果不报错，默认用户就变成xxxxx了
 
 
+
+上面的方法可以用，但是不建议；可参考下面的方法设置默认用户：
+
+使用` wsl.conf` 进行配置，进入 wsl ，编辑 `wsl.conf` 配置文件：
+
+```
+sudo vim /etc/wsl.conf
+```
+
+添加如下内容：
+
+```
+[user]
+default = xxx   #xxx 是你想要设置的用户名、前提是已经创建并配置好了
+```
+
+保存配置并退出，同样在关闭 wsl 之后重新进入，便会发现默认用户已经修改了。
+
+```
+wsl --list --running
+wsl --shutdown
+wsl 
+```
+
+`wsl.conf` 配置**优先级** 较高
+
 # 声明
 
-参考 deepin-docker 制作
-[deepin-docker](https://github.com/BLumia/deepin-docker)
+- 参考 deepin-docker 制作[deepin-docker](https://github.com/BLumia/deepin-docker)
+
+- 参考[WSL 修改默认用户_wsl 设置默认用户-CSDN博客](https://blog.csdn.net/qq_37085158/article/details/131041223)  设置默认用户
