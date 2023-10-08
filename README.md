@@ -6,6 +6,19 @@
 # 使用
 
 ## 安装
+
+首先需要下载 Linux 内核更新包，参考：[旧版 WSL 的手动安装步骤 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package) 
+
+![1696769272977](C:\Users\XXTXT\Desktop\Gitee\openkylin-wsl\README.assets\1696769272977.png)
+
+## 将 WSL 2 设置为默认版本
+
+打开 PowerShell，然后在安装新的 Linux 发行版时运行以下命令，将 WSL 2 设置为默认版本：
+
+```
+wsl --set-default-version 2
+```
+
 ### 方法一
 yangtze.multistrap 是配置文件。
 
